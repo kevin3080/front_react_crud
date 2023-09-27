@@ -2,9 +2,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-//const URL = process.env.REACT_APP_BACKEND_URL;
-
-const URL = process.env.REACT_APP_BACKEND_URL;
+const apiUrl = import.meta.env.VITE_BACKEND_URL;
 
 const CompShowBlogs = () => {
    const [blogs, setBlogs] = useState([]);
@@ -14,13 +12,13 @@ const CompShowBlogs = () => {
 
    // Procedimiento para mostrar todos los blogs
    const getBlogs = async () => {
-      const res = await axios.get(URL);
+      const res = await axios.get(apiUrl);
       setBlogs(res.data);
    };
 
    // procedimiento para eliminar
    const deleteBlog = async id => {
-      await axios.delete(`${URL}${id}`);
+      await axios.delete(`${apiUrl}${id}`);
       getBlogs();
    };
 
