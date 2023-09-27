@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-const URI = 'http://localhost:8000/blogs/';
+const apiUrl = import.meta.env.VITE_BACKEND_URL;
 
 const CompEditBlog = () => {
    const [title, setTitle] = useState('');
@@ -13,7 +13,7 @@ const CompEditBlog = () => {
    // Procedimiento para actualizar
    const update = async e => {
       e.preventDefault();
-      await axios.put(URI + id, {
+      await axios.put(apiUrl + id, {
          title: title,
          content: content,
       });
@@ -24,7 +24,7 @@ const CompEditBlog = () => {
       getBlogById();
    }, []);
    const getBlogById = async () => {
-      const res = await axios.get(URI + id);
+      const res = await axios.get(apiUrl + id);
       setTitle(res.data.title);
       setContent(res.data.content);
    };

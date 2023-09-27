@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const URI = 'http://localhost:8000/blogs/';
+const apiUrl = import.meta.env.VITE_BACKEND_URL;
 
 const CompCreateBlog = () => {
    const [title, setTitle] = useState('');
@@ -12,7 +12,7 @@ const CompCreateBlog = () => {
    // procedimiento guardar
    const store = async event => {
       event.preventDefault();
-      await axios.post(URI, { title: title, content: content });
+      await axios.post(apiUrl, { title: title, content: content });
       navigate('/');
    };
 
