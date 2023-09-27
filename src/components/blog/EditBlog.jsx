@@ -13,7 +13,7 @@ const CompEditBlog = () => {
    // Procedimiento para actualizar
    const update = async e => {
       e.preventDefault();
-      await axios.put(apiUrl + id, {
+      await axios.put(`${apiUrl}${id}`, {
          title: title,
          content: content,
       });
@@ -24,7 +24,7 @@ const CompEditBlog = () => {
       getBlogById();
    }, []);
    const getBlogById = async () => {
-      const res = await axios.get(apiUrl + id);
+      const res = await axios.get(`${apiUrl}/${id}`);
       setTitle(res.data.title);
       setContent(res.data.content);
    };
