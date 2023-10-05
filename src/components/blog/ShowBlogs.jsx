@@ -25,6 +25,9 @@ const CompShowBlogs = () => {
    return (
       <div className="container">
          <div className="row">
+            <h1 className="titulo">
+               Crud realizado con: React - Node - Sequelize - MySQL
+            </h1>
             <div className="col">
                <Link to={'/create'} className="btn btn-primary mb-2 mt-2">
                   <i className="fa-solid fa-circle-plus"></i>
@@ -61,6 +64,14 @@ const CompShowBlogs = () => {
                   </tbody>
                </table>
             </div>
+            <footer>
+               <cite className="cite">
+                  Created by{' '}
+                  <a href="https://github.com/kevin3080" target="_blank">
+                     Kevin Pernia
+                  </a>
+               </cite>
+            </footer>
          </div>
       </div>
    );

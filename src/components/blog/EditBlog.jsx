@@ -30,7 +30,7 @@ const CompEditBlog = () => {
    };
 
    return (
-      <div>
+      <div className="container">
          <h3>Edit Post</h3>
          <form onSubmit={update}>
             <div className="mb-3">

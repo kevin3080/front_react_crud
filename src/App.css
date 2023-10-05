@@ -1,7 +1,5 @@
 #root {
-   max-width: 1280px;
    margin: 0 auto;
-   padding: 2rem;
    text-align: center;
 }
 
@@ -35,9 +33,16 @@
 
 .bg {
    background-color: black;
-   min-height: 15vh;
+   min-height: 10rem;
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
+}
+
+.bg img {
+   min-height: 7rem;
+}
+.titulo {
+   font-size: 1.5rem;
 }
